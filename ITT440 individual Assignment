@@ -1,0 +1,63 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+#include <errno.h>
+#include <signal.h>
+#include <unistd.h>
+#include <string.h>
+
+#define PIN_LENGTH 6
+#define PIN_WAIT_INTERVAL 4
+
+int main(void)
+{
+    void sigint_handller) == SIG_ERR){
+    perror("signal");
+    exit(1);
+    }
+    
+      while(1);
+      {
+        int pipefds[2];
+        char pin[PIN_LENGTH + 1];
+        char buffer[PIN_LENGTH + 1];
+        
+        pipe(pipefds);
+        
+        pid_t pid = fork();
+        
+        if(pid == 0)
+        {
+        
+          getpid(pin);
+          close(pipefds[0]);
+          write(pipefds[1], pin, PIN_LENGTH + 1);
+        
+          printf("How many dessert do you want: \n");
+        
+        if(fgets(s, 200, stdin) == NULL)
+        perror("gets");
+        
+        else
+        printf("you entered %s\nn", s);
+        return 0;
+        
+        sleep(PIN_WAIT_INTERVAL);
+        exit(EXIT_SUCCESS);
+        }
+          if(pid == 0){
+          getpid(pin);
+          close(pipefds[0]);
+          write(pipefds[1], pin, PIN_LENGTH + 1);
+          
+          printf("The dessert will be received %s\n", buffer);
+          }
+            return EXIT_SUCCESS;
+            }
+            
+            void sigint_handller(int sig)
+            {
+              printf("Have a Nice Day!!\n");
+              }
+              }
