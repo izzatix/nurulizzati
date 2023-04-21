@@ -15,7 +15,7 @@ int main(void)
     void sigint_handller) == SIG_ERR){
     perror("signal");
     exit(1);
-    }
+}
     
       while(1);
       {
@@ -27,14 +27,13 @@ int main(void)
         
         pid_t pid = fork();
         
-        if(pid == 0)
-        {
+        if(pid == 0) {
         
-          getpid(pin);
-          close(pipefds[0]);
-          write(pipefds[1], pin, PIN_LENGTH + 1);
+        getpid(pin);
+        close(pipefds[0]);
+        write(pipefds[1], pin, PIN_LENGTH + 1);
         
-          printf("How many dessert do you want: \n");
+        printf("How many dessert do you want: \n");
         
         if(fgets(s, 200, stdin) == NULL)
         perror("gets");
@@ -46,18 +45,16 @@ int main(void)
         sleep(PIN_WAIT_INTERVAL);
         exit(EXIT_SUCCESS);
         }
-          if(pid == 0){
-          getpid(pin);
-          close(pipefds[0]);
-          write(pipefds[1], pin, PIN_LENGTH + 1);
+        if(pid == 0){
+        getpid(pin);
+        close(pipefds[0]);
+        write(pipefds[1], pin, PIN_LENGTH + 1);
           
-          printf("The dessert will be received %s\n", buffer);
-          }
-            return EXIT_SUCCESS;
-            }
+        printf("The dessert will be received %s\n", buffer);{
+        return EXIT_SUCCESS;
+        }
             
-            void sigint_handller(int sig)
-            {
-              printf("Have a Nice Day!!\n");
-              }
-              }
+        void sigint_handller(int sig){
+        printf("Have a Nice Day!!\n");
+}
+}
